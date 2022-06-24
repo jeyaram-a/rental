@@ -13,14 +13,4 @@ public class Vehicle {
         this.price = price;
     }
 
-    public Vehicle type(String type) {
-        this.vehicleType = type;
-        return this;
-    }
-
-    public Vehicle vehicleId(String id) {
-        this.vehicleId = id;
-        return this;
-    }
-
 }

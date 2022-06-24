@@ -19,13 +19,12 @@ public class AddBranchCommand implements Command {
     public Printable execute(Service service) {
 
         if (service.hasBranch(this.branchName)) {
-            return () -> Boolean.toString(false);
+            return () -> "FALSE";
         }
-        Branch newBranch = new Branch(this.branchName);
-        newBranch.addAvailableTypes(this.vehicleTypes);
+        Branch newBranch = new Branch(this.branchName, this.vehicleTypes);
         service.addBranch(newBranch);
 
-        return () -> Boolean.toString(true);
+        return () -> "TRUE";
     }
 
     @Override

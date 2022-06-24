@@ -9,23 +9,22 @@ public class Branch {
     private final Map<String, List<Vehicle>> typeVehiclesMap = new HashMap<>();
     private String name;
 
-    public Branch(String name) {
+    private double dynamicPricingThreshold=0.8;
+
+    public Branch(String name, List<String> vehicleTypes) {
         this.name = name;
+        this.availableVehicleTypes.addAll(vehicleTypes);
     }
 
     public String getName() {
         return this.name;
     }
 
-    public void addAvailableTypes(List<String> vehicleTypes) {
-        availableVehicleTypes.addAll(vehicleTypes);
-    }
-
     public boolean hasVehicleType(String s) {
         return availableVehicleTypes.contains(s);
     }
 
-    public void addVehicles(String vehicleType, String vehicleId, int price) {
+    public void addVehicle(String vehicleType, String vehicleId, int price) {
         this.typeVehiclesMap.compute(vehicleType, (k, v) -> {
             if (v == null)
                 v = new LinkedList<>();
@@ -57,7 +56,11 @@ public class Branch {
         }
     }
 
-    public int book(String vehicleType, int start, int end) {
+    private boolean applicableForDynamicPricing(int total, int available) {
+        return (1.0 - (double)available/total) >= this.dynamicPricingThreshold;
+    }
+
+    public double book(String vehicleType, int start, int end) {
         List<Vehicle> sameType = typeVehiclesMap.getOrDefault(vehicleType, new ArrayList<>());
         int totalVehicleTypeCount = sameType.size();
         if (totalVehicleTypeCount == 0)
@@ -83,7 +86,13 @@ public class Branch {
             return -1;
         Vehicle cheapest = minCostList.get(0);
         updateBookings(cheapest, start, end);
-        return cheapest.price * (end - start);
+        int price =  cheapest.price * (end - start);
+        // Assumption: 10% is for the total price. Not for the hour.
+        // Eg: if price is 400 after dynamic pricing it becomes 440 and not 410
+        if(applicableForDynamicPricing(totalVehicleTypeCount, minCostList.size())) {
+            return price + .10*price;
+        }
+        return price;
     }
 
     public List<String> getAvailableVehicles(int start, int end) {

@@ -13,7 +13,7 @@ public class ListAppender implements Printer {
         output.add(printable.print());
     }
 
-    List<String> getOutput() {
+    public List<String> getOutput() {
         return output;
     }
 }

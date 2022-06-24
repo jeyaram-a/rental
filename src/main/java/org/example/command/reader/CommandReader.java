@@ -3,6 +3,7 @@ package org.example.command.reader;
 import org.example.command.*;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Arrays;
@@ -48,7 +49,7 @@ public class CommandReader {
         }
     }
 
-    public static FileCommandIterator readFromFile(String filePath) {
+    public static FileCommandIterator readFromFile(File filePath) {
         FileReader fr;
         List<String> lines;
         try {
