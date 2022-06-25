@@ -1,6 +1,7 @@
-package org.example.printer;
+package org.example;
 
 import org.example.command.Printable;
+import org.example.printer.Printer;
 
 import java.util.LinkedList;
 import java.util.List;

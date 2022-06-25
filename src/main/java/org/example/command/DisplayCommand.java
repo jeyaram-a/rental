@@ -5,10 +5,19 @@ import org.example.models.Service;
 
 import java.util.Objects;
 
+/**
+ * Displays all VehicleId available for the specified time in a branch
+ */
 public class DisplayCommand implements Command {
     String branchName;
     int start, end;
 
+    /**
+     * @param branch Branch for which the vehicles are to be displayed
+     * @param start start of time interval
+     * @param end end of time interval
+     * @throws RuntimeException if start <= end
+     */
     public DisplayCommand(String branch, int start, int end) {
         if (start >= end) {
             throw new RuntimeException("Start has to be < end");
@@ -19,6 +28,10 @@ public class DisplayCommand implements Command {
 
     }
 
+    /**
+     * @param service Service the command executes upon.
+     * @return List of available Vehicle Ids or Empty if none available
+     */
     @Override
     public Printable execute(Service service) {
         if (!service.hasBranch(this.branchName)) {

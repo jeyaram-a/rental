@@ -5,11 +5,22 @@ import org.example.models.Service;
 
 import java.util.Objects;
 
+/**
+ * Books a {@link org.example.models.Vehicle Vehicle} of the requested type for the specified time in a {@link org.example.models.Branch}.
+ */
 public class BookCommand implements Command {
 
     String branchId, vehicleType;
     int start, end;
 
+    /**
+     * @param branchId Branch in which the vehicle is booked
+     * @param vehicleType Vehicle type
+     * @param start start time. Can be [1-23]
+     * @param end end time. Can be [1-23]
+     *
+     * @throws RuntimeException if start >= end
+     */
     public BookCommand(String branchId, String vehicleType, int start, int end) {
         if (start >= end) {
             throw new RuntimeException("Start has to be < end");
@@ -20,6 +31,13 @@ public class BookCommand implements Command {
         this.end = end;
     }
 
+    /**
+     * @param service Service the command executes upon.
+     * @return -1 if the branch doesn't exist or the vehicle
+     * type doesn't exist or no vehicle of the requested type
+     * is available for the specified time,
+     * else price of the booking.(price_of_vehicle * no_of_hours).
+     */
     @Override
     public Printable execute(Service service) {
         if (!service.hasBranch(this.branchId)) {

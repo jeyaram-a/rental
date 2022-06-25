@@ -4,24 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52e3cf75-c822-4837-b760-8d4e2b343c70" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/command/AddBranchCommandTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/command/AddVehicleCommandTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/command/BookCommandTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/command/DisplayCommandTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="52e3cf75-c822-4837-b760-8d4e2b343c70" name="Changes" comment="Adds test cases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/AddBranchCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/AddBranchCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/AddVehicleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/AddVehicleCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/BookCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/BookCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/DisplayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/DisplayCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/Printable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/Printable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/reader/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/reader/CommandReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Branch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/printer/ListAppender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/printer/ListAppender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/command/reader/CommandReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/command/reader/CommandReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/test_input1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_input1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/VehicleTimeKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/VehicleTimeKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/printer/ListAppender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ListAppender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/add_branch/test_add_branch.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/add_branch/test_add_branch_error.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test_input2.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,16 +61,17 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jeyar/OneDrive/Documents/code/rentalsgradle/rentals/build/jacoco/test.exec&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -82,30 +81,7 @@
       <recent name="org.example.command" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'rentals.test'">
-    <configuration name="BookCommandTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.example.command.BookCommandTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.MainTest">
     <configuration name="BookCommandTest.BookingOverThresholdIncreasesPriceBy10Percent" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -143,6 +119,29 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;org.example.command.DisplayCommandTest.BookingTimesOverlappingDisjoint&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MainTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.MainTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -198,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.MainTest" />
         <item itemvalue="Gradle.Tests in 'rentals.test'" />
         <item itemvalue="Gradle.BookCommandTest.BookingOverThresholdIncreasesPriceBy10Percent" />
         <item itemvalue="Gradle.MainTest.TestProvidedTestCase" />
         <item itemvalue="Gradle.DisplayCommandTest.BookingTimesOverlappingDisjoint" />
-        <item itemvalue="Gradle.BookCommandTest" />
       </list>
     </recent_temporary>
   </component>
@@ -214,8 +213,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1656051604546</updated>
-      <workItem from="1656051607031" duration="7947000" />
+      <workItem from="1656051607031" duration="9722000" />
+      <workItem from="1656142506845" duration="3490000" />
     </task>
+    <task id="LOCAL-00001" summary="Adds test cases">
+      <created>1656060191665</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656060191665</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +240,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adds test cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds test cases" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -240,7 +252,17 @@
           <line>56</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/command/Command.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/rentals$BookCommandTest_BookingOverThresholdIncreasesPriceBy10Percent.ic" NAME="BookCommandTest.BookingOverThresholdIncreasesPriceBy10Percent Coverage Results" MODIFIED="1656060017568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/rentals$Tests_in__rentals_test_.ic" NAME="Tests in 'rentals.test' Coverage Results" MODIFIED="1656060105571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="../../../../OneDrive/Documents/code/rentalsgradle/rentals/build/jacoco/test.exec" NAME="test.exec" MODIFIED="1656059718351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -3,7 +3,6 @@ package org.example;
 import org.example.command.Command;
 import org.example.command.reader.CommandReader;
 import org.example.models.Service;
-import org.example.printer.ListAppender;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;

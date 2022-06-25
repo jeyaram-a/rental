@@ -2,10 +2,12 @@ package org.example.models;
 
 import java.util.Objects;
 
+/**
+ * Util class to represent a vehicleType book at an hour
+ */
 class VehicleTimeKey {
     String vehicleType;
     int startHour;
-
     VehicleTimeKey(String vehicleType, int startHour) {
         this.vehicleType = vehicleType;
         this.startHour = startHour;

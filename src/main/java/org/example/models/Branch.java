@@ -3,12 +3,20 @@ package org.example.models;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Branch {
-    private final Set<String> availableVehicleTypes = new HashSet<>();
-    private final Map<VehicleTimeKey, List<String>> bookings = new HashMap<>();
-    private final Map<String, List<Vehicle>> typeVehiclesMap = new HashMap<>();
-    private String name;
 
+public class Branch {
+    // Available vehicle types in this branch
+    private final Set<String> availableVehicleTypes = new HashSet<>();
+    // All the bookings for each hour of the day
+    // All cars that are booked @ 1 can be represented as
+    // {CAR, 1} -> [C1, C2]
+    private final Map<VehicleTimeKey, List<String>> bookings = new HashMap<>();
+    // Map of Vehicle Type and vehicles
+    // CAR -> [C1, C2]
+    private final Map<String, List<Vehicle>> typeVehiclesMap = new HashMap<>();
+    private final String name;
+
+    // Threshold for dynamic pricing
     private double dynamicPricingThreshold=0.8;
 
     public Branch(String name, List<String> vehicleTypes) {
@@ -63,17 +71,21 @@ public class Branch {
     public double book(String vehicleType, int start, int end) {
         List<Vehicle> sameType = typeVehiclesMap.getOrDefault(vehicleType, new ArrayList<>());
         int totalVehicleTypeCount = sameType.size();
+        // Requested vehicleType not available
         if (totalVehicleTypeCount == 0)
             return -1;
-        int maxBooked = 0;
+        int maxOverlap = 0;
         VehicleTimeKey iterator = new VehicleTimeKey(vehicleType, start);
-
+        // finding max overlap
+        // Assume there are bookings for car [1,4], [2,4], [3,4]. Atleast 3 cars are required for these bookings
+        // New request is for [1,5]
+        // If the branch has only 3 cars this new request cannot be satisfied
         while (iterator.startHour < end) {
-            maxBooked = Math.max(bookings.getOrDefault(iterator, new ArrayList<>()).size(), maxBooked);
+            maxOverlap = Math.max(bookings.getOrDefault(iterator, new ArrayList<>()).size(), maxOverlap);
             iterator.startHour += 1;
         }
 
-        if (maxBooked >= totalVehicleTypeCount)
+        if (maxOverlap >= totalVehicleTypeCount)
             return -1;
 
         Set<String> currentlyBooked = getCurrentlyBookedVehicleIds(vehicleType, start, end);
@@ -98,7 +110,7 @@ public class Branch {
     public List<String> getAvailableVehicles(int start, int end) {
 
         Set<String> currentlyBooked = new HashSet<>();
-
+        // Get all currently booked for all vehicleTypes
         for (String type : this.typeVehiclesMap.keySet()) {
             currentlyBooked.addAll(getCurrentlyBookedVehicleIds(type, start, end));
         }
