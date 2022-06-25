@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52e3cf75-c822-4837-b760-8d4e2b343c70" name="Changes" comment="Adds test cases">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/booker/Booker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/booker/MinCostDynamicCostBooker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/booker/MinCostDynamicCostBookerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/AddBranchCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/AddBranchCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/AddVehicleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/AddVehicleCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/BookCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/BookCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/DisplayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/DisplayCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/Printable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/Printable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/reader/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/reader/CommandReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Vehicle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/VehicleTimeKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/VehicleTimeKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/printer/ListAppender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ListAppender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/add_branch/test_add_branch.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/add_branch/test_add_branch_error.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/test_input2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/command/AddBranchCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/command/AddBranchCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/command/AddVehicleCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/command/AddVehicleCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/command/BookCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/command/BookCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/command/DisplayCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/command/DisplayCommandTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="Class" />
         <option value="JUnit5 Test Class" />
       </list>
     </option>
@@ -77,12 +79,13 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.booker" />
       <recent name="org.example" />
       <recent name="org.example.command" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MainTest">
-    <configuration name="BookCommandTest.BookingOverThresholdIncreasesPriceBy10Percent" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.Tests in 'rentals.test'">
+    <configuration name="BookCommandTest.BookingTimesOverlappingDisjoint" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -95,7 +98,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.command.BookCommandTest.BookingOverThresholdIncreasesPriceBy10Percent&quot;" />
+            <option value="&quot;org.example.command.BookCommandTest.BookingTimesOverlappingDisjoint&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -105,7 +108,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DisplayCommandTest.BookingTimesOverlappingDisjoint" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MinCostDynamicCostBookerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -118,7 +121,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.command.DisplayCommandTest.BookingTimesOverlappingDisjoint&quot;" />
+            <option value="&quot;org.example.booker.MinCostDynamicCostBookerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -128,7 +131,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="MainTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MinCostDynamicCostBookerTest.BookingTimesOverlappingDisjoint" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -141,7 +144,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.MainTest&quot;" />
+            <option value="&quot;org.example.booker.MinCostDynamicCostBookerTest.BookingTimesOverlappingDisjoint&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -151,7 +154,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="MainTest.TestProvidedTestCase" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MinCostDynamicCostBookerTest.WithThresholdBonusChargeApplied" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -164,7 +167,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.MainTest.TestProvidedTestCase&quot;" />
+            <option value="&quot;org.example.booker.MinCostDynamicCostBookerTest.WithThresholdBonusChargeApplied&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -197,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.MainTest" />
         <item itemvalue="Gradle.Tests in 'rentals.test'" />
-        <item itemvalue="Gradle.BookCommandTest.BookingOverThresholdIncreasesPriceBy10Percent" />
-        <item itemvalue="Gradle.MainTest.TestProvidedTestCase" />
-        <item itemvalue="Gradle.DisplayCommandTest.BookingTimesOverlappingDisjoint" />
+        <item itemvalue="Gradle.MinCostDynamicCostBookerTest" />
+        <item itemvalue="Gradle.MinCostDynamicCostBookerTest.WithThresholdBonusChargeApplied" />
+        <item itemvalue="Gradle.MinCostDynamicCostBookerTest.BookingTimesOverlappingDisjoint" />
+        <item itemvalue="Gradle.BookCommandTest.BookingTimesOverlappingDisjoint" />
       </list>
     </recent_temporary>
   </component>
@@ -248,21 +251,26 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/org/example/command/BookCommandTest.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/command/Command.java</url>
           <line>6</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/example/command/BookCommandTest.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/command/BookCommand.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/rentals$BookCommandTest_BookingOverThresholdIncreasesPriceBy10Percent.ic" NAME="BookCommandTest.BookingOverThresholdIncreasesPriceBy10Percent Coverage Results" MODIFIED="1656060017568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/rentals$Tests_in__rentals_test_.ic" NAME="Tests in 'rentals.test' Coverage Results" MODIFIED="1656060105571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/rentals$Tests_in__rentals_test_.ic" NAME="Tests in 'rentals.test' Coverage Results" MODIFIED="1656166899250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="../../../../OneDrive/Documents/code/rentalsgradle/rentals/build/jacoco/test.exec" NAME="test.exec" MODIFIED="1656059718351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

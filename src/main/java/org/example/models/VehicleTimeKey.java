@@ -5,10 +5,10 @@ import java.util.Objects;
 /**
  * Util class to represent a vehicleType book at an hour
  */
-class VehicleTimeKey {
+public class VehicleTimeKey {
     String vehicleType;
     int startHour;
-    VehicleTimeKey(String vehicleType, int startHour) {
+    public VehicleTimeKey(String vehicleType, int startHour) {
         this.vehicleType = vehicleType;
         this.startHour = startHour;
     }

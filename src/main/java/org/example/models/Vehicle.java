@@ -13,4 +13,10 @@ public class Vehicle {
         this.price = price;
     }
 
+    public String getId() {
+        return this.vehicleId;
+    }
+    public int getPrice() {
+        return this.price;
+    }
 }

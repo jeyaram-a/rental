@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.booker.MinCostDynamicCostBooker;
 import org.example.command.Command;
 import org.example.command.reader.CommandReader;
 import org.example.models.Service;
@@ -21,14 +22,14 @@ class MainTest {
     @Test
     void TestProvidedTestCase() {
         ListAppender printer = new ListAppender();
-        Service service = new Service("Test");
+        Service service = new Service("Test", new MinCostDynamicCostBooker(0.8));
         for(Command command: CommandReader.readFromFile(getFile("test_input1.txt"))) {
             printer.print(command.execute(service));
         }
         List<String> expected = Arrays.asList("TRUE", "TRUE", "TRUE", "TRUE", "TRUE", "FALSE", "-1", "1000", "250", "900", "V2");
         List<String> actual = printer.getOutput();
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
 }

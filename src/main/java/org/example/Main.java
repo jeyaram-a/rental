@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.booker.MinCostDynamicCostBooker;
 import org.example.command.Command;
 import org.example.command.reader.CommandReader;
 import org.example.models.Service;
@@ -10,7 +11,7 @@ import java.io.File;
 
 public class Main {
     public static void main(String[] args) {
-        Service service = new Service("Test");
+        Service service = new Service("Test", new MinCostDynamicCostBooker(0.8));
         if (args.length < 1) {
             throw new RuntimeException("No file path provided for commands");
         }

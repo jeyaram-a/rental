@@ -16,9 +16,6 @@ public class Branch {
     private final Map<String, List<Vehicle>> typeVehiclesMap = new HashMap<>();
     private final String name;
 
-    // Threshold for dynamic pricing
-    private double dynamicPricingThreshold=0.8;
-
     public Branch(String name, List<String> vehicleTypes) {
         this.name = name;
         this.availableVehicleTypes.addAll(vehicleTypes);
@@ -41,7 +38,7 @@ public class Branch {
         });
     }
 
-    private Set<String> getCurrentlyBookedVehicleIds(String vehicleType, int start, int end) {
+    public Set<String> getCurrentlyBookedVehicleIds(String vehicleType, int start, int end) {
         VehicleTimeKey iterator = new VehicleTimeKey(vehicleType, start);
         Set<String> currentlyBooked = new HashSet<>();
         while (iterator.startHour < end) {
@@ -51,7 +48,15 @@ public class Branch {
         return currentlyBooked;
     }
 
-    private void updateBookings(Vehicle vehicle, int start, int end) {
+    public List<Vehicle> getVehiclesOfType(String type) {
+        return typeVehiclesMap.getOrDefault(type, new ArrayList<>());
+    }
+
+    public List<String> getBookings(VehicleTimeKey key) {
+        return bookings.getOrDefault(key, new ArrayList<>());
+    }
+
+    public void updateBookings(Vehicle vehicle, int start, int end) {
         while (start < end) {
             VehicleTimeKey iterator = new VehicleTimeKey(vehicle.vehicleType, start);
             bookings.compute(iterator, (k, v) -> {
@@ -62,49 +67,6 @@ public class Branch {
             });
             start += 1;
         }
-    }
-
-    private boolean applicableForDynamicPricing(int total, int available) {
-        return (1.0 - (double)available/total) >= this.dynamicPricingThreshold;
-    }
-
-    public double book(String vehicleType, int start, int end) {
-        List<Vehicle> sameType = typeVehiclesMap.getOrDefault(vehicleType, new ArrayList<>());
-        int totalVehicleTypeCount = sameType.size();
-        // Requested vehicleType not available
-        if (totalVehicleTypeCount == 0)
-            return -1;
-        int maxOverlap = 0;
-        VehicleTimeKey iterator = new VehicleTimeKey(vehicleType, start);
-        // finding max overlap
-        // Assume there are bookings for car [1,4], [2,4], [3,4]. Atleast 3 cars are required for these bookings
-        // New request is for [1,5]
-        // If the branch has only 3 cars this new request cannot be satisfied
-        while (iterator.startHour < end) {
-            maxOverlap = Math.max(bookings.getOrDefault(iterator, new ArrayList<>()).size(), maxOverlap);
-            iterator.startHour += 1;
-        }
-
-        if (maxOverlap >= totalVehicleTypeCount)
-            return -1;
-
-        Set<String> currentlyBooked = getCurrentlyBookedVehicleIds(vehicleType, start, end);
-
-        List<Vehicle> minCostList = sameType.stream()
-                .filter(vehicle -> !currentlyBooked.contains(vehicle.vehicleId))
-                .sorted(Comparator.comparingInt(x -> x.price))
-                .collect(Collectors.toList());
-        if (minCostList.size() == 0)
-            return -1;
-        Vehicle cheapest = minCostList.get(0);
-        updateBookings(cheapest, start, end);
-        int price =  cheapest.price * (end - start);
-        // Assumption: 10% is for the total price. Not for the hour.
-        // Eg: if price is 400 after dynamic pricing it becomes 440 and not 410
-        if(applicableForDynamicPricing(totalVehicleTypeCount, minCostList.size())) {
-            return price + .10*price;
-        }
-        return price;
     }
 
     public List<String> getAvailableVehicles(int start, int end) {

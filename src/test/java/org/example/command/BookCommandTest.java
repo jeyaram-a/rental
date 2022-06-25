@@ -1,5 +1,6 @@
 package org.example.command;
 
+import org.example.booker.MinCostDynamicCostBooker;
 import org.example.models.Branch;
 import org.example.models.Service;
 import org.junit.jupiter.api.Test;
@@ -11,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BookCommandTest {
 
     Service getService() {
-        return new Service("TEST");
+        return new Service("TEST", new MinCostDynamicCostBooker(0.8));
     }
 
     Branch getBranch(String branchName) {

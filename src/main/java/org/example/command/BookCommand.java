@@ -50,8 +50,7 @@ public class BookCommand implements Command {
             return () -> Integer.toString(-1);
         }
 
-        double result = branch.book(this.vehicleType, this.start, this.end);
-
+        double result = service.getBooker().book(branch, this.vehicleType, this.start, this.end);
 
         return () -> {
             if(result % 1 == 0) {
